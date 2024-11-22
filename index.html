@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troll Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="question">Câu hỏi: Thanh Thanh có cutie không?</h1>
+        <div class="button-container">
+            <button id="wrongBtn" class="btn wrong">Không</button>
+            <button id="correctBtn" class="btn correct">Có</button>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h2 class="popup-title">🎉 HIHI. Mình biết mà! Ngại quá!!! 🎉</h2>
+            <img src="assets/a2.jpg" alt="Celebration Image" class="popup-image">
+            <canvas id="fireworkCanvas"></canvas>
+            <button id="closePopup" class="btn close-btn">Đóng</button>
+        </div>
+    </div>    
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* Tổng quan */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.question {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Để các nút xuống dòng nếu không đủ chỗ */
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.correct {
+    background: linear-gradient(45deg, #34c759, #0a9e6c);
+}
+
+.correct:hover {
+    background: #1c7a48;
+    transform: scale(1.1);
+}
+
+.wrong {
+    background: linear-gradient(45deg, #ff3b30, #d92626);
+}
+
+.wrong:hover {
+    background: #b91d1d;
+    transform: scale(1.1);
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo cột */
+    align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+    justify-content: center; /* Căn giữa các phần tử theo chiều dọc */
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    animation: popupAnimation 0.5s ease-out;
+    position: relative;
+    background: #FFD1DC; /* Màu hồng nền */
+    color: white; /* Màu chữ */
+}
+
+.popup-image {
+    max-width: 20%; /* Giới hạn chiều rộng để ảnh không chiếm quá nhiều không gian */
+    height: auto;
+    margin: 10px 0; /* Khoảng cách trên và dưới */
+    border-radius: 10px; /* Bo góc ảnh */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Tùy chọn: Bóng cho ảnh */
+}
+
+.close-btn {
+    margin-top: 20px;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center; /* Căn nút "Đóng" theo giữa container */
+}
+
+.popup-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+@keyframes popupAnimation {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#fireworkCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: -1;
+}
+
+.close-btn {
+    margin-top: 20px;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #004085;
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE STYLES */
+
+/* Điện thoại */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 50px;
+        padding: 10px;
+    }
+
+    .question {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .button-container {
+        flex-wrap: nowrap; /* Nút không xuống dòng */
+        justify-content: space-evenly; /* Cân đều các nút trên màn hình */
+    }
+
+    .popup-content {
+        padding: 15px;
+    }
+
+    .popup-title {
+        font-size: 18px;
+    }
+
+    #fireworkCanvas {
+        height: 200px;
+    }
+}
+
+/* Máy tính bảng */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        margin-top: 70px;
+        padding: 15px;
+    }
+
+    .question {
+        font-size: 24px;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+
+    .button-container {
+        flex-wrap: nowrap; /* Nút không xuống dòng */
+        justify-content: center; /* Nút luôn căn giữa */
+    }
+
+    #fireworkCanvas {
+        height: 250px;
+    }
+}
