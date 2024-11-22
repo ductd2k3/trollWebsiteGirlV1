@@ -97,9 +97,9 @@ body {
 }
 
 .popup-image {
-    max-width: 20%; /* Giới hạn chiều rộng để ảnh không chiếm quá nhiều không gian */
+    max-width: 80%; /* Giới hạn chiều rộng để ảnh không chiếm quá nhiều không gian */
     height: auto;
-    margin: 10px 0; /* Khoảng cách trên và dưới */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
     border-radius: 10px; /* Bo góc ảnh */
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Tùy chọn: Bóng cho ảnh */
 }
